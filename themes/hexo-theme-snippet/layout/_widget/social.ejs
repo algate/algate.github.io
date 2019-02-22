@@ -1,12 +1,28 @@
 <% if(theme.social){%>
     <div class="widget">
-      <h3 class="title"><%= __('social') %></h3> 
+      <h3 class="title"><%= __('social') %></h3>
         <div class="content social">
             <% theme.social.forEach(function (item) {%>
-	            <a href="<%- item.href%>" rel="external nofollow" title="<%- item.name%>" target="_blank">
-			    	<i class="<%- item.icon%> fa fa-<%- item.icon%>"></i>
-			    </a>
+                <% if(item.icon == 'weixin'){%>
+                    <a href="javascript:void(0);" class="weixinconcat" rel="external nofollow" title="<%- item.name%>" target="_blank">
+    			    	<i class="<%- item.icon%> fa fa-<%- item.icon%>"></i>
+                        <img class="weixinconcat-img" src="<%- item.src%>"/>
+    			    </a>
+                <%} else {%>
+                    <a href="<%- item.href%>" rel="external nofollow" title="<%- item.name%>" target="_blank">
+    			    	<i class="<%- item.icon%> fa fa-<%- item.icon%>"></i>
+    			    </a>
+                <%}%>
             <%})%>
+            <style>
+                .weixinconcat-img {
+                    display: none;
+                }
+                .weixinconcat:hover .weixinconcat-img{
+                    display: block;
+                    width: 200px;
+                }
+            </style>
         </div>
     </div>
 <%}%>

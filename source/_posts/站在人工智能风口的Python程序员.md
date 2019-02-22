@@ -1,6 +1,6 @@
 ---
 title: 站在人工智能风口的Python程序员
-categories: 后端
+categories: 要闻
 tags: python
 comments: true
 img: 'http://img3.cache.netease.com/tech/2015/11/12/20151112091757bbdcf_550.jpg'
@@ -23,4 +23,3 @@ date: 2017-08-25 16:12:19
 乐了Python程序员，苦的就是公司是Python技术栈的传统IT业务的企业了。就别提一般的小企业，连豆瓣、知乎这样的都大受冲击了。豆瓣的洪强宁，也跑去创业做人工智能相关的应用了……
 
 没有人能够对抗趋势，风口企业这么有钱，能做的就只能是避开它们的锋芒。我觉得Python技术栈的企业应该考虑新的技术选型了。
-

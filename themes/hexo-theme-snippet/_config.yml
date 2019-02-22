@@ -25,7 +25,7 @@ menu:
 favicon: /blog/favicon.ico
 
 ## Feed
-rss: /atom.xml
+rss: /blog/atom.xml
 
 ## Carousel
 carousel:
@@ -48,6 +48,7 @@ widgets:
 
 ## 搜索
 jsonContent:
+  meta: true
   searchLocal: true
   searchGoogle: false
   posts:
@@ -61,14 +62,15 @@ jsonContent:
 notification:
     |-
     <p>
-        主题下载：<a href="https://github.com/shenliyang/hexo-theme-snippet" title="fork me" target="_blank">Snippet主题</a> <br/>
-        主题使用：<a href="https://github.com/shenliyang/hexo-theme-snippet/blob/master/README.md#常见问题" title="" target="_blank">常见使用问题</a> <br/>
-        支持主题：<a href="https://github.com/shenliyang/hexo-theme-snippet/stargazers">Star一下</a>
+        主页地址：<a href="https://algate.github.io" title="fork me" target="_blank">网站主页</a> <br/>
+        VUE地址：<a href="https://algate.github.io/onions.vuecli3" title="" target="_blank">VUECLI3项目预览</a> <br/>
+        React地址：<a href="https://algate.github.io/onions.com">React项目预览</a>
     </p>
     <hr/>
+    <h3>欢迎购买我的广告位，谢谢您的支持！</h3>
     <p>
-        <a href="https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2" target="_blank">
-            <img src="http://snippet.shenliyang.com/img/aliyun_tj310.jpg" />
+        <a href="javascript:void(0);" target="_blank">
+            <img src="/blog/img/sale.png" />
         </a>
     </p>
 
@@ -82,16 +84,14 @@ social:
    href: mailto:algate@foxmail.com
  - name: 联系QQ
    icon: qq
-   href: /
+   href: http://wpa.qq.com/msgrd?v=3&uin=361593833&site=qq&menu=yes
  - name: 微信
    icon: weixin
-   href: /
- - name: QQ群
-   icon: users
-   href: /
+   href:
+   src: /blog/img/weixinconcat.png
  - name: RSS
    icon: feed
-   href: /atom.xml
+   href: /blog/atom.xml
 
 ## 文章分类设置
 cate_config:
@@ -125,11 +125,11 @@ links:
 # 主题自定义个性化配置
 
 ## 网站宣传语
-branding:
+branding: 不要跟我谈理想，我的理想是不工作
 
 ## 设置banner背景图片
 banner:
-    img: http://snippet.shenliyang.com/img/banner.jpg
+    img: ./img/banner.jpg
 
 ## 首页列表底部面板
 homePanel: true
@@ -173,7 +173,7 @@ reward:
 
 ## 主题评论
 
-## Valine评论  - use
+## Valine评论 (LeaCloud)  - use
 valine:
    enable: true
    appId: XCBkrMT2cT5gHnAV3uKwy2Eo-gzGzoHsz
@@ -228,9 +228,9 @@ uyan:
   uyan_id: 1966422
 
 
-## 网站访客统计
+## 网站访客统计   -  use
 visit_counter:
-   site: false
+   site: true
    page: false
 
 ## 网站访问统计分析
@@ -239,13 +239,13 @@ visit_counter:
 cnzz_analytics: 1276282118
 
 ### 百度统计
-baidu_analytics:
+baidu_analytics: 9a7f5c6b952f516145c8be030ef28239
 
 ### 谷歌统计
 google_analytics:
 
 ### 腾讯分析
-tencent_analytics:
+tencent_analytics: 65342153
 
 ### 百度站点认证
 baidu_site_verification:
@@ -254,6 +254,6 @@ baidu_site_verification:
 baidu_push: false
 
 #网站主题配置
-since: 2017
+since: 2016-2019
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.1
