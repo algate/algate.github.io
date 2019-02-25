@@ -89,6 +89,9 @@ social:
    icon: weixin
    href:
    src: /blog/img/weixinconcat.png
+ - name: 加入QQ群
+   icon: group
+   href: http://shang.qq.com/wpa/qunwpa?idkey=ee9ad994222792f08ab657adb97d6d8dc4cff89a6a0a6a35ae9de4cac473c552
  - name: RSS
    icon: feed
    href: /blog/atom.xml
