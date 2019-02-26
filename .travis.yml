@@ -11,7 +11,7 @@ cache:
 notifications:
   email:
     recipients:
-      - snippet@91h5.cc
+      - 361593833@qq.com
     on_success: never
     on_failure: always
 
@@ -27,6 +27,7 @@ before_script:
   - chmod +x _travis.sh
 
 script:
+  - false
   - hexo clean && hexo g
   - gulp
 
@@ -41,9 +42,7 @@ after_script:
 
 branches:
   only:
-    - dev
+    - gh-pages
 env:
  global:
-   - GH_REF: github.com/shenliyang/shenliyang.github.io.git
-   - GITEE_REF: gitee.com/shenliyang/shenliyang.git
-
+   - GH_REF: github.com/algate/algate.github.io.git
