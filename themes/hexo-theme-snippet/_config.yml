@@ -30,7 +30,7 @@ rss: /atom.xml
 ## Carousel
 carousel:
   img: './img/head-img.jpg'
-  url: 'https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=xs0pypd2'
+  url: 'https://algate.github.io'
 
 # 各个小工具的设置
 
