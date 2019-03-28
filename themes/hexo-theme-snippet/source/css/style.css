@@ -40,6 +40,10 @@ body {
   position: relative;
   font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
 }
+ul,li {
+    margin:0;
+    padding:0;
+}
 h1,
 h2,
 h3,

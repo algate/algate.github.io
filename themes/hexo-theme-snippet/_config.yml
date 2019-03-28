@@ -31,6 +31,7 @@ rss: /atom.xml
 carousel:
   img: './img/head-img.jpg'
   url: 'https://algate.github.io'
+  carousel: true
 
 # 各个小工具的设置
 

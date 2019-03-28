@@ -1,8 +1,52 @@
-<% if (theme.carousel.img) { %>
-    <div class="carousel">
-        <a href="<%= theme.carousel.url %>" target="_blank">
-            <img src="<%- url_for(theme.carousel.img) %>" alt="前端套路深 - 不要瞎折腾！">
-        </a>
-    </div>
+<style type="text/css">
+    li{list-style:none;}
+    img{border:0 none;}
+    #div5{width:100%;height:148px;position:relative;background:#ccc;overflow:hidden;}
+    #div5 ul{position:absolute;top:10px;height:128px;margin-bottom:0;overflow:hidden;}
+    #div5 li{height:128px;float:left;padding-right:10px;}
+    #div5 li:last-child{padding-left: 0;}
+    #div5 img{height:100%;border-radius: 8px;}
+</style>
+<% if (theme.carousel.carousel) { %>
+<div id="div5">
+	<ul>
+		<li><img src="imgs2/0.jpg"/></li>
+		<li><img src="imgs2/1.jpg"/></li>
+		<li><img src="imgs2/2.jpg"/></li>
+		<li><img src="imgs2/3.jpg"/></li>
+		<li><img src="imgs2/4.jpg"/></li>
+		<li><img src="imgs2/5.jpg"/></li>
+		<li><img src="imgs2/6.jpg"/></li>
+		<li><img src="imgs2/7.jpg"/></li>
+	</ul>
+</div>
 <% } %>
-
+<script type="text/javascript">
+    var oDiv5=document.getElementById('div5');
+    var oUl=oDiv5.getElementsByTagName('ul')[0];
+    var oLi=oUl.getElementsByTagName('li');
+    document.addEventListener('DOMContentLoaded',function(){
+    	oUl.innerHTML+=oUl.innerHTML;
+    	oUl.style.width=oLi[0].offsetWidth*oLi.length +'px';
+    	var speed = 16;
+    	function move(){
+    		//循环滚动
+            console.log(oUl.offsetLeft);
+    		if(oUl.offsetLeft<-oUl.offsetWidth/2) {
+    		    // offsetLeft有可能是负的，此处的offsetLeft起初是0，再移动就是负的
+    			oUl.style.left=speed+'px';
+    		} else if (oUl.offsetLeft>0) {
+    			oUl.style.left=-oUl.offsetWidth/2+speed+'px';
+    		}
+            oUl.style.left=oUl.offsetLeft+speed+'px';
+    	}
+    	var timer=setInterval(move,200);
+    	oDiv5.onmouseover=function() {
+    		clearInterval(timer);
+    	}
+    	oDiv5.onmouseout=function() {
+    		//setInterval(move,30);
+    		timer=setInterval(move,200);
+    	}
+    });
+</script>
