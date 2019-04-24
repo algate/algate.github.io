@@ -113,3 +113,5 @@ neat_js:
   compress:
   exclude:
     - '*.min.js'
+    - '**/vector.js'
+    - '**/reject.js'

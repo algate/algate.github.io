@@ -15,6 +15,7 @@
         rev = require('gulp-rev-append'),
         sequence = require('gulp-sequence'),
         path = require('path'),
+        babel = require('gulp-babel'),
         paths = {
             root: './',
             source: './themes/hexo-theme-snippet/source/' //主题下原文件
@@ -39,6 +40,7 @@
     // 校验JS语法和风格
     gulp.task('js-task', function() {
         return gulp.src(paths.source + 'js/*.js')
+        .pipe(babel())
         .pipe(jshint())
         .pipe(jshint.reporter(stylish))
         .pipe(gulp.dest(paths.source + 'js/'))

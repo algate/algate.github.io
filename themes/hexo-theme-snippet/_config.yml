@@ -3,6 +3,11 @@
 #   language: zh-CN
 # ---------------------------------------------------------------
 
+## header - reject
+
+header:
+    reject: true
+
 ## menu
 menu:
 - page: home
@@ -20,6 +25,12 @@ menu:
 - page: 要闻
   url: /categories/要闻/
   icon: fa-google-wallet
+- page: 日记
+  url: /categories/日记/
+  icon: fa-book
+- page: 404
+  url: /404.html
+  icon: fa-bug
 
 ## favicon
 favicon: /favicon.ico
@@ -29,9 +40,9 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
+  carousel: true
   img: './img/head-img.jpg'
   url: 'https://algate.github.io'
-  carousel: true
 
 # 各个小工具的设置
 
@@ -124,16 +135,18 @@ tagcloud:
 ## 友链设置
 links:
   - Hexo官网: https://hexo.io/zh-cn/
+  - TTF的家园: http://www.ttfde.top
 
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
 branding: 不要跟我谈理想，我的理想是不工作
+oldbranding:
 
-## 设置banner背景图片
+## 设置banner背景图片./img/banner.jpg
 banner:
-    img: ./img/banner.jpg
+    img:
 
 ## 首页列表底部面板
 homePanel: true

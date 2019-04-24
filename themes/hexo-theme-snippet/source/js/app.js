@@ -1,13 +1,25 @@
 /*!========================================================================
  *  hexo-theme-snippet: app.js v1.0.0
  * ======================================================================== */
-window.onload = function() {
+window.onload = function () {
     var $body = document.body,
-        $mnav = document.getElementById("mnav"), //获取导航三角图标
-        $mainMenu = document.getElementById("main-menu"), //手机导航
-        $process = document.getElementById('process'), //进度条
-        $ajaxImgs = document.querySelectorAll('.img-ajax'), //图片懒加载
-        $commentsCounter = document.getElementById('comments-count'),
+        $mnav = document.getElementById("mnav"),
+
+
+    //获取导航三角图标
+    $mainMenu = document.getElementById("main-menu"),
+
+
+    //手机导航
+    $process = document.getElementById('process'),
+
+
+    //进度条
+    $ajaxImgs = document.querySelectorAll('.img-ajax'),
+
+
+    //图片懒加载
+    $commentsCounter = document.getElementById('comments-count'),
         $gitcomment = document.getElementById("gitcomment"),
         $backToTop = document.getElementById("back-to-top"),
         $toc = document.getElementById("article-toc"),
@@ -15,7 +27,7 @@ window.onload = function() {
 
     //设备判断
     var isPC = true;
-    (function(designPercent) {
+    (function (designPercent) {
         function params(u, p) {
             var m = new RegExp("(?:&|/?)" + p + "=([^&$]+)").exec(u);
             return m ? m[1] : '';
@@ -26,12 +38,12 @@ window.onload = function() {
     })();
 
     //手机菜单导航
-    $mnav.onclick = function(){
+    $mnav.onclick = function () {
         var navOpen = $mainMenu.getAttribute("class");
-        if(navOpen.indexOf("in") != '-1'){
-            $mainMenu.setAttribute("class","collapse navbar-collapse");
+        if (navOpen.indexOf("in") != '-1') {
+            $mainMenu.setAttribute("class", "collapse navbar-collapse");
         } else {
-            $mainMenu.setAttribute("class","collapse navbar-collapse in");
+            $mainMenu.setAttribute("class", "collapse navbar-collapse in");
         }
     };
 
@@ -42,7 +54,7 @@ window.onload = function() {
         if (_length > 0) {
             var scrollBottom = getScrollTop() + window.innerHeight;
             for (var i = 0; i < _length; i++) {
-                (function(index) {
+                (function (index) {
                     var $this = $targetEles[index];
                     var $this_offsetZero = $this.getBoundingClientRect().top + window.pageYOffset - document.documentElement.clientTop;
                     if (scrollBottom >= $this_offsetZero && $this.getAttribute('data-src') && $this.getAttribute('data-src').length > 0) {
@@ -51,7 +63,7 @@ window.onload = function() {
                             $this.style.display = 'block';
                         } else {
                             var imgObj = new Image();
-                            imgObj.onload = function() {
+                            imgObj.onload = function () {
                                 $this.innerHTML = "";
                             };
                             imgObj.src = $this.getAttribute('data-src');
@@ -66,31 +78,31 @@ window.onload = function() {
 
     //获取滚动高度
     function getScrollTop() {
-        return ($body.scrollTop || document.documentElement.scrollTop);
+        return $body.scrollTop || document.documentElement.scrollTop;
     }
     //滚动回调
-    var scrollCallback = function() {
+    var scrollCallback = function () {
         if ($process) {
-            $process.style.width = (getScrollTop() / ($body.scrollHeight - window.innerHeight)) * 100 + "%";
+            $process.style.width = getScrollTop() / ($body.scrollHeight - window.innerHeight) * 100 + "%";
         }
-        (isPC && getScrollTop() >= 300) ? $backToTop.removeAttribute("class","hide") : $backToTop.setAttribute("class","hide");
+        isPC && getScrollTop() >= 300 ? $backToTop.removeAttribute("class", "hide") : $backToTop.setAttribute("class", "hide");
         imgsAjax($ajaxImgs);
     };
     scrollCallback();
 
     //监听滚动事件
-    window.addEventListener('scroll', function() {
-        if($toc){
+    window.addEventListener('scroll', function () {
+        if ($toc) {
             var top = $toc.offsetTop;
             var left = $toc.offsetLeft;
             var width = $toc.offsetWidth;
-            if(getScrollTop() <= top){
+            if (getScrollTop() <= top) {
                 $toc.style = "";
             } else {
                 $toc.style.position = "fixed";
                 $toc.style.top = "5px";
                 $toc.style.left = left + "px";
-                $toc.style.width = width + "px"
+                $toc.style.width = width + "px";
             }
         }
         clearTimeout(timer);
@@ -100,17 +112,16 @@ window.onload = function() {
     });
 
     //返回顶部
-	$backToTop.onclick = function() {
-	    cancelAnimationFrame(timer);
-	    timer = requestAnimationFrame(function fn() {
-	        var sTop = getScrollTop();
-	        if (sTop > 0) {
-	            $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
-	            timer = requestAnimationFrame(fn);
-	        } else {
-	            cancelAnimationFrame(timer);
-	        }
-	    });
-	};
-
+    $backToTop.onclick = function () {
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(function fn() {
+            var sTop = getScrollTop();
+            if (sTop > 0) {
+                $body.scrollTop = document.documentElement.scrollTop = sTop - 50;
+                timer = requestAnimationFrame(fn);
+            } else {
+                cancelAnimationFrame(timer);
+            }
+        });
+    };
 };
