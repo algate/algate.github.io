@@ -1,9 +1,9 @@
 ---
 title: 站在人工智能风口的Python程序员
 categories: 要闻
-tags: python
+tags:
+  - python
 comments: true
-img: 'http://img3.cache.netease.com/tech/2015/11/12/20151112091757bbdcf_550.jpg'
 abbrlink: 63096
 date: 2017-08-25 16:12:19
 ---

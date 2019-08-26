@@ -5,7 +5,7 @@ tags:
   - JavaScript
   - 打包工具
 comments: true
-abbrlink: JS0426
+abbrlink: JS190426
 date: 2019-04-26 10:38:30
 ---
 

@@ -6,8 +6,6 @@ tags:
   - 快捷键
   - IDE
 comments: true
-img: >-
-  http://imgmini.dfshurufa.com/mobile/20160325172758_220bfff17cc1d8fa3fb6c8fae974bde9_2.jpeg
 abbrlink: 47814
 date: 2017-09-21 10:44:48
 ---

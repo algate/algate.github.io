@@ -40,7 +40,7 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
-  carousel: true
+  carousel: false
   img: './img/head-img.jpg'
   url: 'https://algate.github.io'
 
