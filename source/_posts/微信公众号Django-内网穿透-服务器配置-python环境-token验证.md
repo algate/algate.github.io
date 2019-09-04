@@ -96,9 +96,12 @@ token验证失败 - 只是最多的提示，就是微信发送请求，没哟得
 ## 4.Django服务添加验证接口
 
 ### 4.1 修改Django项目下的urls.py
+4.1.1修改Djangon项目下urls.py
 
     # 添加接口(views为之前修改首页导入的app的入口模块，wechat为定义的app下的访问的模块方法)
     url(r'weixin/.*', views.wechat),
+
+4.1.2 修改polls(wechat)下views.py
 
     # add wechat-token
     from django.views.decorators.csrf import csrf_exempt  # 解除csrf验证

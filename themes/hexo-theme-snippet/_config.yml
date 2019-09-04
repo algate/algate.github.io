@@ -261,8 +261,9 @@ baidu_analytics: 617bf75bfd954382202927d87bf48f13
 ### 谷歌统计
 google_analytics:
 
-### 腾讯分析 - use
-tencent_analytics: 66183388
+### 腾讯分析 - use (http请求被拒绝，暂时无法使用)
+# tencent_analytics: 66183388
+tencent_analytics:
 
 ### 百度站点认证
 baidu_site_verification:

@@ -26,6 +26,9 @@ document.querySelector("p").dataset; // {name: "蜘蛛侠", age: "16"}
 - URLSearchParams
 假设浏览器的url参数是 "?name=蜘蛛侠&age=16"：
 
+```javascript
+new URLSearchParams(location.search).get("name"); // 蜘蛛侠
+```
 ### 4.hidden（隐藏元素）
 这是一个html属性，规定元素是否隐藏，表现跟css的display: none一致：
 `<div hidden>我被隐藏了</div>`
