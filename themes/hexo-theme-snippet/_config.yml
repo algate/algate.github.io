@@ -74,9 +74,10 @@ jsonContent:
 notification:
     |-
     <p>
+        微信订阅号：<img src="/img/wx-onion.png" /> <br/>
         原博客地址(旧文章)：<a href="https://algate.github.io/hexo.pure" title="algate" target="_blank">网站主页</a> <br/>
         VUE地址：<a href="https://algate.github.io/onions.vuecli3" title="vue" target="_blank">VUECLI3项目预览</a> <br/>
-        React地址：<a href="https://algate.github.io/onions.com" title="react" target="_blank">React项目预览</a>
+        React地址：<a href="https://algate.github.io/onions.com" title="react" target="_blank">React项目预览</a> <br/>
     </p>
     <hr/>
     <h3>欢迎购买我的广告位，谢谢您的支持！</h3>

@@ -322,3 +322,5 @@ elem.getBoundingClientRect();
 }
 ```
 注意：top是距离文档顶部的距离，y则是距离可视窗口（浏览器屏幕）的顶部距离，如果浏览器滚动，top值不变，y值会变
+
+· MDN [Web API接口](https://developer.mozilla.org/zh-CN/docs/Web/API)
