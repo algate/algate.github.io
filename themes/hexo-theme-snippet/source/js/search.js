@@ -1,4 +1,4 @@
-(function() {
+(function () {
     var searchWord = document.getElementById('search-key'),
         searchLocal = document.getElementById('search-local'),
         searchForm = document.getElementById('search-form'),
@@ -6,22 +6,24 @@
         searchWrap = document.getElementById('result-wrap'),
         searchResult = document.getElementById('search-result'),
         searchTpl = document.getElementById('search-tpl').innerHTML,
-        winWidth, winHeight, searchData;
+        winWidth,
+        winHeight,
+        searchData;
     if (window.innerWidth) {
         winWidth = parseInt(window.innerWidth);
-    } else if ((document.body) && (document.body.clientWidth)) {
+    } else if (document.body && document.body.clientWidth) {
         winWidth = parseInt(document.body.clientWidth);
     }
     if (window.innerHeight) {
         winHeight = parseInt(window.innerHeight);
-    } else if ((document.body) && (document.body.clientHeight)) {
+    } else if (document.body && document.body.clientHeight) {
         winHeight = parseInt(document.body.clientHeight);
     }
     searchMask.style.width = winWidth + 'px';
     searchMask.style.height = winHeight + 'px';
 
     function tpl(html, data) {
-        return html.replace(/\{\w+\}/g, function(str) {
+        return html.replace(/\{\w+\}/g, function (str) {
             var prop = str.replace(/\{|\}/g, '');
             return data[prop] || '';
         });
@@ -51,12 +53,12 @@
         return regExp.test(raw);
     }
 
-    function searchShow(){
+    function searchShow() {
         removeClass(searchWrap, 'hide');
         removeClass(searchMask, 'hide');
     }
 
-    function searchHide(){
+    function searchHide() {
         addClass(searchWrap, 'hide');
         addClass(searchMask, 'hide');
     }
@@ -65,7 +67,7 @@
         if (!searchData) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', '/content.json', true);
-            xhr.onload = function() {
+            xhr.onload = function () {
                 if (this.status >= 200 && this.status < 300) {
                     var res = JSON.parse(this.response || this.responseText);
                     searchData = res instanceof Array ? res : res.posts;
@@ -74,7 +76,7 @@
                     console.error(this.statusText);
                 }
             };
-            xhr.onerror = function() {
+            xhr.onerror = function () {
                 console.error(this.statusText);
             };
             xhr.send();
@@ -86,7 +88,7 @@
     function render(data) {
         var html = '';
         if (data.length) {
-            html = data.map(function(post) {
+            html = data.map(function (post) {
                 return tpl(searchTpl, {
                     title: filter(post.title, 'title'),
                     path: post.path,
@@ -94,7 +96,7 @@
                 });
             }).join('');
         } else {
-            if(searchWord.value == ''){
+            if (searchWord.value == '') {
                 searchHide();
             } else {
                 html = '<div class="tips"><p>没有找到相关结果!</p></div>';
@@ -108,7 +110,7 @@
         var index = art.indexOf(keyword);
         var artRe = art.replace(keyword, '<b>' + keyword + '</b>');
         if (type == 'title') {
-            return artRe
+            return artRe;
         }
         if (type == 'content' && index > 0) {
             return artRe.substr(index - 15, 45);
@@ -122,22 +124,22 @@
             return;
         }
         var regExp = new RegExp(key.replace(/[ ]/g, '|'), 'gmi');
-        loadData(function(data) {
-            var result = data.filter(function(post) {
+        loadData(function (data) {
+            var result = data.filter(function (post) {
                 return matcher(post, regExp);
             });
             render(result);
         });
         e.preventDefault();
         searchShow();
-        searchWord.onfocus = function() {
+        searchWord.onfocus = function () {
             searchShow();
         };
     }
-    searchWord.onfocus = function() {
+    searchWord.onfocus = function () {
         searchWord.addEventListener('input', search);
     };
-    searchMask.onclick = function() {
+    searchMask.onclick = function () {
         searchHide();
     };
 })();

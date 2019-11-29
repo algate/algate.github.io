@@ -29,6 +29,45 @@ body {
     position: relative;
     font-family: @font_family_1;
 }
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+header,
+hgroup,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+figcaption,
+menu,
+button {
+	margin: 0;
+	padding: 0
+}
 h1,h2,h3,h4,h5,h6 {
     font-weight: 400;
     color: @grey3_color;
@@ -203,10 +242,10 @@ pre {
     position: relative;
     text-align: center;
     line-height: 0;
-    height: 180px;
+    height: 300px;
     width: 100%;
-    background:@white_color url(http://7xpw2b.com1.z0.glb.clouddn.com/hexo-sinppet/img/banner.jpg);
-    background-repeat: repeat;
+    background:-webkit-radial-gradient(center, ellipse cover, #111 10%, #333 90%);
+    // background-repeat: repeat;
     overflow: hidden;
     .banneriframe {
         width: 100%;
@@ -216,7 +255,21 @@ pre {
     .main-header-box {
         position: relative;
         width: 100%;
-        padding-top: 30px;
+        height: 100%;
+        // padding-top: 30px;
+        .canvas-box {
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            canvas {
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: crosshair;
+            }
+        }
         a.header-avatar {
             img {
             	width: 82px;
@@ -229,10 +282,14 @@ pre {
             }
         }
         .branding {
-        	padding-top:15px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 20px;
+        	// padding-top:15px;
         	h2 {
         		font-family: @font_family_5;
-        		width: 320px;
+        		// width: 320px;
         		margin: 0 auto;
         		letter-spacing: 3px;
         		color: @theme_color;
@@ -291,6 +348,9 @@ pre {
                 line-height: 4em;
                 display: block;
                 padding: 0 21px;
+                .fa {
+                    margin-right: 2px;
+                }
             }
             &:hover {
                 >a {
@@ -1175,6 +1235,9 @@ pre {
                 }
                 a {
                     padding:0;
+                    .fa {
+                        margin-right: 2px;
+                    }
                 }
                 ul {
                     visibility: visible;

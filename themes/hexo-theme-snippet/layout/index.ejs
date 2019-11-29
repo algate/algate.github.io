@@ -1,10 +1,12 @@
 <% if (theme.carousel.img) { %>
     <div class="carousel">
         <a href="<%= theme.carousel.url %>" target="_blank">
-            <img src="<%- url_for(theme.carousel.img) %>" alt="">
+            <img src="<%- url_for(theme.carousel.img) %>" alt="前端套路深 - 不要瞎折腾！">
         </a>
     </div>
 <% } %>
+
+<%- partial('_partial/carousel') %>
 
 <% if(page.posts && page.posts.length){ %>
 <% page.posts.forEach(function (post, i) { %>
@@ -18,7 +20,7 @@
     var _photoUrl = post.img || (urls.length > 0 && urls[random]) || (urls2.length > 0 && urls2[random2]) || '';
 %>
 <article class="post">
-    <% if(_photoUrl) {%>
+    <% if(post.img) {%>
         <div class="post-media">
             <a href="<%- url_for(post.path) %>">
                 <img class="img-ajax" src="<%- url_for('/img/loading.gif') %>"  data-src="<%- url_for(_photoUrl) %>"   alt="<%- post.title %>">
@@ -28,7 +30,7 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+                <a href="<%- url_for(post.path) %>"><%= i+1 %>、<%- post.title %></a>
             </h1>
             <div class="post-meta">  &bull;
                 <time class="post-date" datetime="" title="">

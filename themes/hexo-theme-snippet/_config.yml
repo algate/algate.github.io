@@ -3,6 +3,11 @@
 #   language: zh-CN
 # ---------------------------------------------------------------
 
+## header - reject
+
+header:
+    reject: true
+
 ## menu
 menu:
 - page: home
@@ -20,6 +25,12 @@ menu:
 - page: 要闻
   url: /categories/要闻/
   icon: fa-google-wallet
+- page: 日记
+  url: /categories/日记/
+  icon: fa-book
+- page: 404
+  url: /404.html
+  icon: fa-bug
 
 ## favicon
 favicon: /favicon.ico
@@ -29,6 +40,7 @@ rss: /atom.xml
 
 ## Carousel
 carousel:
+  carousel: false
   img: './img/head-img.jpg'
   url: 'https://algate.github.io'
 
@@ -62,9 +74,10 @@ jsonContent:
 notification:
     |-
     <p>
+        微信订阅号：<img src="/img/wx-onion.png" /> <br/>
         原博客地址(旧文章)：<a href="https://algate.github.io/hexo.pure" title="algate" target="_blank">网站主页</a> <br/>
         VUE地址：<a href="https://algate.github.io/onions.vuecli3" title="vue" target="_blank">VUECLI3项目预览</a> <br/>
-        React地址：<a href="https://algate.github.io/onions.com" title="react" target="_blank">React项目预览</a>
+        React地址：<a href="https://algate.github.io/onions.com" title="react" target="_blank">React项目预览</a> <br/>
     </p>
     <hr/>
     <h3>欢迎购买我的广告位，谢谢您的支持！</h3>
@@ -123,16 +136,18 @@ tagcloud:
 ## 友链设置
 links:
   - Hexo官网: https://hexo.io/zh-cn/
+  - TTF的家园: http://www.ttfde.top
 
 
 # 主题自定义个性化配置
 
 ## 网站宣传语
 branding: 不要跟我谈理想，我的理想是不工作
+oldbranding:
 
-## 设置banner背景图片
+## 设置banner背景图片./img/banner.jpg
 banner:
-    img: ./img/banner.jpg
+    img:
 
 ## 首页列表底部面板
 homePanel: true
@@ -247,8 +262,9 @@ baidu_analytics: 617bf75bfd954382202927d87bf48f13
 ### 谷歌统计
 google_analytics:
 
-### 腾讯分析 - use
-tencent_analytics: 66183388
+### 腾讯分析 - use (http请求被拒绝，暂时无法使用)
+# tencent_analytics: 66183388
+tencent_analytics:
 
 ### 百度站点认证
 baidu_site_verification:

@@ -2,6 +2,37 @@
 	<%- js('js/search.js?rev=@@hash') %>
 <% } %>
 
+<% if(theme.carousel.carousel){ %>
+    <script>
+        var oDiv5=document.getElementById('div5');
+        var oUl=oDiv5.getElementsByTagName('ul')[0];
+        var oLi=oUl.getElementsByTagName('li');
+        document.addEventListener('DOMContentLoaded',function(){
+        	oUl.innerHTML+=oUl.innerHTML;
+        	oUl.style.width=oLi[0].offsetWidth*oLi.length +'px';
+        	var speed = 16;
+        	function move(){
+        		//循环滚动
+        		if(oUl.offsetLeft<-oUl.offsetWidth/2) {
+        		    // offsetLeft有可能是负的，此处的offsetLeft起初是0，再移动就是负的
+        			oUl.style.left=speed+'px';
+        		} else if (oUl.offsetLeft>0) {
+        			oUl.style.left=-oUl.offsetWidth/2+speed+'px';
+        		}
+                oUl.style.left=oUl.offsetLeft+speed+'px';
+        	}
+        	var timer=setInterval(move,200);
+        	oDiv5.onmouseover=function() {
+        		clearInterval(timer);
+        	}
+        	oDiv5.onmouseout=function() {
+        		//setInterval(move,30);
+        		timer=setInterval(move,200);
+        	}
+        });
+    </script>
+<% } %>
+
 <% if(theme.tagcloud.tag3d){ %>
     <%- js('assets/tagcanvas.min.js?rev=2.9') %>
     <script>
@@ -30,4 +61,8 @@
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <% } %>
 
+<% if(theme.header.reject){ %>
+    <%- js('assets/vector.js?rev=@@hash') %>
+    <%- js('assets/reject.js?rev=@@hash') %>
+<% } %>
 <%- js('js/app.js?rev=@@hash') %>

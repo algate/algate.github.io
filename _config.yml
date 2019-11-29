@@ -95,7 +95,7 @@ deploy:
   type: git
   repo: https://github.com/algate/algate.github.io.git
   branch: master
-  message: deploy-algate
+  message: :art:带表情的commit提交
 
 # hexo-neat
 neat_enable: true
@@ -113,3 +113,5 @@ neat_js:
   compress:
   exclude:
     - '*.min.js'
+    - '**/vector.js'
+    - '**/reject.js'
