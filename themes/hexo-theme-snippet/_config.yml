@@ -75,7 +75,7 @@ notification:
     |-
     <p>
         微信订阅号：<img src="/img/wx-onion.png" /> <br/>
-        微信小程序码：<img src="/img/wechatcode.png" /> <br/>
+        微信程序码：<img src="/img/wechatcode.png" width="160" /> <br/>
         原博客地址(旧文章)：<a href="https://algate.github.io/hexo.pure" title="algate" target="_blank">网站主页</a> <br/>
         VUE地址：<a href="https://algate.github.io/onions.vuecli3" title="vue" target="_blank">VUECLI3项目预览</a> <br/>
         React地址：<a href="https://algate.github.io/onions.com" title="react" target="_blank">React项目预览</a> <br/>
