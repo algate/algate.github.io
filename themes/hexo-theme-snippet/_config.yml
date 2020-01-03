@@ -22,8 +22,8 @@ menu:
 - page: 时间轴
   url: /archives/
   icon: fa-clock-o
-- page: 要闻
-  url: /categories/要闻/
+- page: 计算机
+  url: /categories/计算机/
   icon: fa-google-wallet
 - page: 日记
   url: /categories/日记/
@@ -274,6 +274,6 @@ baidu_site_verification:
 baidu_push: false
 
 #网站主题配置
-since: 2016-2019
+since: 2016-2020
 robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
 version: 1.2.1
