@@ -26,7 +26,7 @@ for (var i = 0; i < 10; ++i) {
 nums.forEach(square);
 ```
 <!-- more -->
-#### 2.every() 接受一个返回值为布尔类型的函数，对数组中的每个元素使用该函数。对于所有的元素，改函数返回true，则该方法返回true
+#### 2.every() 接受一个返回值为布尔类型的函数，对数组中的每个元素使用该函数。对于所有的元素，该函数返回true，则该方法返回true
 ```
 function isEven(num) {
    return num % 2 == 0;
