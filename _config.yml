@@ -95,7 +95,7 @@ deploy:
   type: git
   repo: https://github.com/algate/algate.github.io.git
   branch: master
-  message: :art:带表情的commit提交-发布项目
+  message: :art:小程序画七巧板
 
 # hexo-neat
 neat_enable: true
