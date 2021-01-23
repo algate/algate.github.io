@@ -59,7 +59,7 @@ EOF
   # Github Pages
   git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master --tags
   # Gitee Pages
-  # git push --quiet "https://shenliyang:${GITEE_TOKEN}@${GITEE_REF}" master:master --tags
+  # git push --quiet "https://algate:${GITEE_TOKEN}@${GITEE_REF}" master:master --tags
 }
 
 case $1 in
